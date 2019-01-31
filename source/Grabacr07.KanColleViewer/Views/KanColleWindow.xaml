@@ -20,6 +20,7 @@
 				   xmlns:contents="clr-namespace:Grabacr07.KanColleViewer.Views.Contents"
 				   xmlns:settings="clr-namespace:Grabacr07.KanColleViewer.Models.Settings"
 				   xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+				   xmlns:cefCore="clr-namespace:CefSharp;assembly=CefSharp.Core"
 				   mc:Ignorable="d"
 				   d:DataContext="{d:DesignInstance viewModels:KanColleWindowViewModel}"
 				   Title="{Binding Title}"
@@ -130,6 +131,9 @@
 						</livet:InteractionMessageTrigger>
 					</i:Interaction.Triggers>
 					<cef:ChromiumWebBrowser>
+						<cef:ChromiumWebBrowser.BrowserSettings>
+							<cefCore:BrowserSettings WindowlessFrameRate="60"/>
+						</cef:ChromiumWebBrowser.BrowserSettings>
 						<i:Interaction.Behaviors>
 							<behaviors:NavigatorBehavior Navigator="{Binding Navigator}" />
 							<mtti:TaskbarThumbnailBehavior />
